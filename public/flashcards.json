@@ -1,0 +1,11 @@
+[
+    {"question": "What is the normal heart rate for an adult?", "answer": "60-100 bpm"},
+    {"question": "What is the treatment for hypertension?", "answer": "Lifestyle changes and antihypertensive medications."},
+    {"question": "What is the BMI range for overweight?", "answer": "25-29.9"},
+    {"question": "What is the main symptom of myocardial infarction?", "answer": "Chest pain or discomfort."},
+    { "question": "What is the normal respiratory rate for an adult?", "answer": "12-20 breaths per minute" },
+    { "question": "What is the first-line treatment for Type 2 Diabetes?", "answer": "Lifestyle modification and Metformin" },
+    { "question": "What is the Glasgow Coma Scale (GCS) used to assess?", "answer": "Level of consciousness" },
+    { "question": "What does the acronym ABC stand for in emergency medicine?", "answer": "Airway, Breathing, Circulation" },
+    { "question": "What is the most common cause of lower back pain?", "answer": "Muscle strain or ligament sprain" }
+]
