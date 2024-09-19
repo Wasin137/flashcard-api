@@ -1,21 +1,14 @@
-import { promises as fs } from 'fs';
-import path from 'path';
+import { kv } from '@vercel/kv'
+import { NextResponse } from 'next/server'
 
 export async function GET() {
-    try {
-        // Get the path to the JSON file
-        const jsonDirectory = path.join(process.cwd(), 'public');
-        const fileContents = await fs.readFile(jsonDirectory + '/flashcards.json', 'utf8');
-        
-        // Parse the JSON file
-        const flashcards = JSON.parse(fileContents);
+  const flashcards = await kv.lrange('flashcards', 0, -1)
+  return NextResponse.json(flashcards)
+}
 
-        // Return the flashcards as JSON
-        return Response.json(flashcards);
-    } catch (error) {
-        console.error('Error reading flashcards:', error);
-        return Response.json({
-            error: 'Internal Server Error'
-        }, { status: 500 });
-    }
+export async function POST(request) {
+  const newCard = await request.json()
+  newCard.id = Date.now().toString()
+  await kv.rpush('flashcards', JSON.stringify(newCard))
+  return NextResponse.json(newCard, { status: 201 })
 }
