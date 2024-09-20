@@ -12,8 +12,8 @@ export default function FlashcardDisplay() {
   const [isPaused, setIsPaused] = useState(false)
   const [timeRemaining, setTimeRemaining] = useState(6000)
 
-  const questionDuration = 6000
-  const answerDuration = 4000
+  const questionDuration = 6000 // Set the duration for the question (in milliseconds)
+  const answerDuration = 4000 // Set the duration for the answer (in milliseconds)
 
   const fetchFlashcards = useCallback(async () => {
     try {
