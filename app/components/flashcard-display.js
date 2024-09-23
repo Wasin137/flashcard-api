@@ -41,7 +41,6 @@ export default function FlashcardDisplay() {
           } else {
             if (showAnswer) {
               // Move to next card after showing answer
-              console.log(currentCardIndex)
               setCurrentCardIndex((prevIndex) => (prevIndex + 1) % flashcards.length)
               setShowAnswer(false)
               return questionDuration
